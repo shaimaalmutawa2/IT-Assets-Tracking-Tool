@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Assets Tracking</title>
+    <link rel="stylesheet" href="InfoPage.css">
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1>IT Assets Tracking Tool</h1>
+    </div>
+
+    <div class="dashboard">
+
+        <div class="dashboard-card">
+            <h3>Total Devices</h3>
+            <p id="totalDevices">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Available Devices</h3>
+            <p id="availableDevices">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Assigned Devices</h3>
+            <p id="assignedDevices">0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>In Maintenance</h3>
+            <p id="maintenanceDevices">0</p>
+        </div>
+
+    </div>
+
+    <div class="devices-section">
+
+        <div class="heading2">
+            <h2>Devices List</h2>
+        </div>
+
+        <div class="devices-toolbar">
+
+            <div class="searchbar">
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search by device name or user..."
+                    aria-label="Search by device name or assigned user">
+            </div>
+
+            <div class="AddDevice">
+                <button id="addDeviceBtn" type="button">
+                    + Add Device
+                </button>
+            </div>
+
+        </div>
+
+        <div class="info-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Device Type</th>
+                        <th>User</th>
+                        <th>Department</th>
+                        <th>Purchase Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody class="info-table" id="infoTable">
+                    <tr>
+                        <td colspan="7">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="modal" id="addDeviceModal">
+
+        <div class="modal-content">
+
+            <span class="close" id="closeModal">&times;</span>
+
+            <h2 id="modalTitle">Add Device</h2>
+
+            <form id="addDeviceForm">
+
+                <div class="form-group">
+                    <label for="deviceName">Device Name</label>
+                    <input type="text" id="deviceName" name="deviceName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceType">Device Type</label>
+                    <select id="deviceType" name="deviceType" required>
+                        <option value="">Select Device Type</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Desktop">Desktop</option>
+                        <option value="Tablet">Tablet</option>
+                        <option value="Smartphone">Smartphone</option>
+                        <option value="Monitor">Monitor</option>
+                        <option value="Printer">Printer</option>
+                        <option value="Keyboard">Keyboard</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="user">User</label>
+                    <input type="text" id="user" name="user">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department">
+                </div>
+
+                <div class="form-group">
+                    <label for="purchaseDate">Purchase Date</label>
+                    <input type="date" id="purchaseDate" name="purchaseDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status" required>
+                        <option value="">Select Status</option>
+                        <option value="Available">Available</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Retired">Retired</option>
+                    </select>
+                </div>
+
+                <div class="submit">
+                    <button type="submit" id="submitDeviceBtn">
+                        Add Device
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="InfoPage.js"></script>
+
+</body>
+</html>
